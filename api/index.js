@@ -8,7 +8,7 @@ import multer from "multer";
 
 const app = express();
 
-const allowedOrigins = ['http://localhost:5173', 'http://localhost:8800'];
+const allowedOrigins = ['http://localhost:5173', 'http://localhost:8800','https://ucraft.vercel.app'];
 
 app.use(
   cors({
