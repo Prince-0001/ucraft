@@ -6,6 +6,7 @@ import conf from '../conf'
 import moment from 'moment'
 import { AuthContext } from '../context/AuthContext'
 import DomPurify from 'dompurify'
+import Image from '../components/Image.jsx'
 
 const Single = () => {
   
@@ -50,14 +51,14 @@ const Single = () => {
   return (
     <div className='single'>
       <div className="content">
-        <img src={`../uploads/${post?.img}`}></img>
+        <Image url={post?.img}></Image>
         <div className='user'>
           <img src={post.userImage?post.userImage:`http://cdn-icons-png.flaticon.com/128/1144/1144760.png`}></img>
           <div className='info'>
             <span>{post.username}</span>
             <p>Posted {moment(post.date).fromNow()} </p>
           </div>
-          {/* {currentUser?.username===post.username && */}
+          {currentUser?.username===post.username &&
           <div className="edit">
             <Link to={`/write?edit=${postId}`} state={post}>
             <img src={"https://cdn-icons-png.flaticon.com/128/10336/10336582.png"} alt="" />
@@ -65,7 +66,7 @@ const Single = () => {
             
             <img  onClick={handleDelete} src="https://cdn-icons-png.flaticon.com/128/9068/9068885.png" alt="" />
           </div>
-          {/* } */}
+          }
         </div>
         <h1>{getText(post.title)}</h1>
         <p
