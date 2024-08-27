@@ -59,6 +59,7 @@ const Write = () => {
     }
 
   }
+  
   return (
     <div className='add'>
       <div className="content">

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import axios from 'axios';
 import conf from '../conf'
+import Image from '../components/Image.jsx';
 
 const Home = () => {
   const [posts,setPosts] =useState([]);
@@ -29,9 +30,7 @@ const Home = () => {
       <div className="posts">
         {posts.map(post=>(
           <div className="post" key={post.id}>
-            <div className="img">
-              <img src={`./uploads/${post.img}`} alt=''></img>
-            </div>
+            <Image url={post.img}></Image>
             <div className="content">
               <Link  className="link" to={`/post/${post.id}`}>
                 <h1>{post.title.substring(0,100)}</h1>
