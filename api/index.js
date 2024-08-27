@@ -40,7 +40,7 @@ filename: function(req,file,cb){
 const upload =multer({storage})
 
 app.post('/api/upload',upload.single('file'),function(req,res){
-  return res.status(200).json(req.file.filename)
+  return res.status(200).json(req.file.filename?req.file.filename:"No Image");
   
   
 })

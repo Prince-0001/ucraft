@@ -10,6 +10,7 @@ export const register =(req,res)=>{
 
     db.query(q,[req.body.email,req.body.username],(err,data)=>{
         if(err){
+            console.log(err);
             return res.json(err);
         } 
         if(data.length) return res.status(409).json("User already exists!");
@@ -25,6 +26,7 @@ export const register =(req,res)=>{
         ]
         db.query(q,[values],(err,data)=>{
             if(err){
+                console.log(err);
                 return res.json(err);
                 
             } 
@@ -39,7 +41,10 @@ export const login =(req,res)=>{
     const q= "SELECT * FROM users WHERE email= ?"
 
     db.query(q,[req.body.email],(err,data)=>{
-        if(err) return res.json(err);
+        if(err){
+            console.log(err);
+            return res.json(err);
+        }
         if(data.length===0) return res.status(404).json("User not found!");
 
         //CHECK PASSWORD
