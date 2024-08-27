@@ -54,10 +54,11 @@ export const login =(req,res)=>{
         const token=jwt.sign({id:data[0].id},"&*()");
         const {password,...other}=data[0];
 
-        res.cookie("access_token",token,{
-            httpOnly:true
-            
-        }).status(200).json(other);
+        res.setHeader(
+            'Set-Cookie',
+            `access_token=${token}; HttpOnly; Secure; SameSite=None; Path=/`
+          ).status(200).json(other);
+        
     })
 }
 
