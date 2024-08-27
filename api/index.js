@@ -30,7 +30,7 @@ app.use('/api/images',express.static('public/images/'))
 
 const storage =multer.diskStorage({
 destination: function(req,file,cb){
-  cb(null,'public/Images')
+  cb(null,'public/images')
 },
 filename: function(req,file,cb){
   cb(null,file.fieldname+"_"+Date.now()+path.extname(file.originalname))
@@ -55,6 +55,6 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 
-app.listen(8800, () => {
+app.listen(4000, () => {
   console.log("Connected!");
 });
