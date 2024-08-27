@@ -4,7 +4,7 @@ import Menu from './Menu'
 import axios from 'axios'
 import conf from '../conf'
 import moment from 'moment'
-import { AuthContext } from '../context/authContext'
+import { AuthContext } from '../context/AuthContext'
 import DomPurify from 'dompurify'
 
 const Single = () => {
