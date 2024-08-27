@@ -10,7 +10,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Single from "./pages/Single";
 import Write from "./pages/Write";
-import { AuthContextProvider } from './context/authContext.jsx';
+import { AuthContextProvider } from './context/AuthContext.jsx';
 
 
 const router=createBrowserRouter([
