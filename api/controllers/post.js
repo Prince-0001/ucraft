@@ -8,7 +8,9 @@ export const getPosts=(req,res)=>{
     "select * from posts";
 
     db.query(q,[req.query.cat],(err,data)=>{
-        if(err) return res.status(504).send(err);
+        if(err){
+            return res.status(501).send(err);
+        } 
 
         return res.status(200).json(data);
     })
