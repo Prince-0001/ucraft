@@ -33,6 +33,9 @@ const Single = () => {
     };
     fetchData();
   },[postId])
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []);
 
   const handleDelete= async()=>{
     try{

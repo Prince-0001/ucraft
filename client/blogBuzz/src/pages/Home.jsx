@@ -19,6 +19,9 @@ const Home = () => {
     };
     fetchData();
   },[cat])
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []);
 
   const getText=(html)=>{
     const doc=new DOMParser().parseFromString(html,'text/html')
