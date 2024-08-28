@@ -26,7 +26,7 @@ const Home = () => {
   }
   
   return (
-    <div className='home'>
+   (posts.length!=0)? <div className='home'>
       <div className="posts">
         {posts.map(post=>(
           <div className="post" key={post.id}>
@@ -44,7 +44,14 @@ const Home = () => {
           </div>
         ))}
       </div>
+    </div>:
+    <div className='home'>
+        <div className='loading'>
+          <img src='https://i.giphy.com/feN0YJbVs0fwA.webp'></img>
+          <h1>Loading...</h1>
+      </div>
     </div>
+    
   )
 }
 

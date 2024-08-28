@@ -204,6 +204,33 @@ h1,p{
                     }
                 }
             }
+            .loading{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 500px;
+                color: #555;
+                img{
+                    width: 150px;
+                    
+                }
+                h1{
+                    animation: blink 2s infinite;
+                    
+                }
+                
+                @keyframes blink {
+                    0% {
+                    opacity: 1;
+                    }
+                    50% {
+                    opacity: 0;
+                    }
+                    100% {
+                    opacity: 1;
+                    }
+                }
+            }
         }
 
         .single{

@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect, useContext } from 'react'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import axios from 'axios';
 import conf from '../conf';
 import { useLocation ,useNavigate } from 'react-router-dom';
 import moment from 'moment';
+import { AuthContext } from '../context/AuthContext';
 
 const Write = () => {
 
@@ -15,7 +16,6 @@ const Write = () => {
   const [desc,setDesc]=useState(state?.desc||"");
   const [file,setFile]=useState(null);
   const [cat,setCat]=useState(state?.cat||"");
-  const [previmgUrl,setPrevImgUrl]=useState(state?.img||"")
   
  
 
@@ -59,6 +59,10 @@ const Write = () => {
     }
 
   }
+  const {currentUser}=useContext(AuthContext)
+  useEffect(()=>{
+    if(!currentUser)  navigate('/login');
+  },[currentUser])
   
   return (
     <div className='add'>
