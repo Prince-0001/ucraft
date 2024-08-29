@@ -16,6 +16,7 @@ const Write = () => {
   const [desc,setDesc]=useState(state?.desc||"");
   const [file,setFile]=useState(null);
   const [cat,setCat]=useState(state?.cat||"");
+
   
  
 
@@ -37,7 +38,8 @@ const Write = () => {
   const handleClick=async e=>{
     e.preventDefault()
     const url=await upload();
-    const imgUrl=(url)?url:previmgUrl
+    const prev=state?.img||""
+    const imgUrl=(url)?url:prev
     console.log(imgUrl);
     // console.log(title+" "+desc+" "+cat+" "+imgUrl)
 

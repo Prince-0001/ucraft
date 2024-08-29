@@ -12,8 +12,8 @@ const app = express();
 
 
 
-// const allowedOrigins = ['http://localhost:5173', 'http://localhost:8800','https://ucraft.vercel.app'];
-const allowedOrigins = ['https://ucraft.onrender.com','https://ucraft.vercel.app'];
+const allowedOrigins = ['http://localhost:5173', 'http://localhost:8800','https://ucraft.vercel.app'];
+// const allowedOrigins = ['https://ucraft.onrender.com','https://ucraft.vercel.app'];
 
 app.use(
   cors({
